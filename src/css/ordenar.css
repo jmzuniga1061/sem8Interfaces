@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #123b2f;
+  color: #f3f2dc;
+}
+
+/* NAVBAR */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 70px;
+}
+
+.logo {
+  letter-spacing: 6px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.menu {
+  display: flex;
+  gap: 55px;
+  list-style: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #f1f1f1;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+/* Estilo del título principal "Ordenar" (Alineado con tu .main-title de Playfair) */
+.page-title {
+    font-family: var(--title-font);
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--text-light);
+    letter-spacing: 2px;
+}
+
+/* --- Estilos de las categorías del menú --- */
+.menu-category {
+    margin-bottom: 60px;
+    padding: 20px 0;
+}
+
+.category-info {
+    margin-bottom: 30px;
+}
+
+.category-title {
+    font-size: 1.5em;
+    font-weight: 600; /* Poppins-like weight */
+    color: var(--secondary-text); /* Color de tu .small-title */
+    display: inline-block;
+    border-bottom: 2px solid var(--secondary-text);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.category-description {
+    font-size: 0.9em;
+    color: rgba(243, 242, 220, 0.8); /* Versión semitransparente de tu color de texto */
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+/* --- Item del Menú (Caja de producto e imagen) --- */
+.menu-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Posicionamiento para Items a la izquierda (Imagen a la derecha) */
+.item-left {
+    justify-content: flex-start;
+    flex-direction: row-reverse; 
+}
+
+/* Posicionamiento para Items a la derecha (Imagen a la izquierda) */
+.item-right {
+    justify-content: flex-end;
+    flex-direction: row; 
+}
+
+/* Contenedor de la Imagen: Círculo con borde */
+.item-image-box {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--text-light); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.item-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenedor de detalles (Nombre/Precio) */
+.item-details {
+    padding: 20px 30px;
+    background: var(--primary-green); /* Usamos un verde oscuro ligeramente distinto para que resalte */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    min-width: 150px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.item-price {
+    font-weight: 700;
+    font-size: 1.5em;
+    color: var(--accent-gold);
+}
+
+/* Solapamiento y Alineación para ITEM-LEFT (Texto a la derecha de la caja) */
+.item-left .item-details {
+    margin-left: -20px; 
+    align-items: flex-end; 
+    text-align: right;
+}
+
+/* Solapamiento y Alineación para ITEM-RIGHT (Texto a la izquierda de la caja) */
+.item-right .item-details {
+    margin-right: -20px; 
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* --- Media Queries para Responsividad (móvil) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .menu {
+        margin-top: 10px;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .page-title {
+        font-size: 2.5em;
+    }
+    
+    .menu-item {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .item-image-box {
+        order: 1; 
+        width: 150px;
+        height: 150px;
+    }
+
+    .item-details {
+        order: 2; 
+        margin: -20px 0 0 0 !important; 
+        padding: 25px;
+        min-width: 80%;
+        text-align: center !important;
+        align-items: center !important;
+    }
+}
